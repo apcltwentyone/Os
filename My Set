@@ -165,7 +165,7 @@ trust XX:XX:XX:XX:XX:XX
 connect XX:XX:XX:XX:XX:XX
 disconnect XX:XX:XX:XX:XX:XX
 
-12. Screenshot
+12. Screenshot & File explorer
 sudo pacman -S maim nsxiv xclip
 mkdir -p ~/Pictures
 maim ~/Pictures/screenshot.png
@@ -179,8 +179,6 @@ Add inside keys[]
 { Mod4Mask|ShiftMask, XK_s, spawn, {.v = sssel } },
 sudo make clean install
 reboot
-
-13.File explorer
 sudo pacman -S nnn tar zip unzip p7zip
 nnn
 j / Down / Ctrl+n     move down
@@ -250,12 +248,12 @@ static const char *colors[SchemeLast][2] = {
 sudo make clean install
 Restart dwm (MODKEY+Shift+q then startx)
 
-15. Time Date
+13. Time Date
 sudo systemctl enable --now systemd-timesyncd
 timedatectl set-ntp true
 timedatectl status
 
-16. Battery
+14. Battery
 ls /sys/class/power_supply/
 cat /sys/class/power_supply/BAT0/capacity
 cat /sys/class/power_supply/BAT0/status
@@ -273,7 +271,7 @@ sudo tlp start
 sudo pacman -S thermald
 sudo systemctl enable --now thermald
 
-17. Security
+15. Security
 sudo pacman -S ufw
 sudo systemctl enable --now ufw
 sudo ufw default deny incoming
@@ -318,7 +316,7 @@ else
 fi
 echo "Done. Reboot, then run: aa-enabled && sudo aa-status"
 
-18. ffmpeg & v4l
+16. ffmpeg & v4l
 sudo pacman -S ffmpeg v4l-utils
 v4l2-ctl --list-devices
 v4l2-ctl -d /dev/video0 --list-formats-ext
@@ -329,7 +327,7 @@ ffmpeg -i in.mp4 out.mkv
 ffmpeg -i in.mp4 -vn -c:a libmp3lame out.mp3
 ffmpeg -ss 00:00:10 -i in.mp4 -t 5 -c copy cut.mp4
 
-19. Neovim
+17. Neovim
 sudo pacman -S neovim
 mkdir -p ~/.config/nvim
 nvim ~/.config/nvim/init.lua
@@ -405,7 +403,7 @@ ZQ                    quit without saving
 m<letter>             set mark
 `<letter>             jump to mark
 
-20. Tmux
+18. Tmux
 sudo pacman -S tmux
 nvim ~/.tmux.conf
 cat << 'EOF' > ~/.tmux.conf
@@ -477,7 +475,7 @@ prefix :               enter command prompt
 prefix ?               list all keybindings
 prefix t               show clock
 
-21. Vm
+19. Vm
 sudo pacman -Syu qemu-full
 sudo pacman -S qemu-img
 sudo pacman -S wget
@@ -592,7 +590,7 @@ sudo systemctl daemon-reload
 sudo systemctl start systemd-zram-setup@zram0.service
 zramctl
 
-22.Sec Tools & Progaming Language
+20.Sec Tools & Progaming Language
 curl -O https://blackarch.org/strap.sh
 nvim strap.sh
 sha1sum strap.sh
@@ -604,7 +602,7 @@ sudo pacman -Syu
 pacman -Sg | grep blackarch
 sudo pacman -S tool-name
 
-23. Browser
+21. Browser
 #!/usr/bin/env bash
 set -e
 
@@ -673,7 +671,7 @@ gu                    go up one level in URL path
 gU                    go to root of current domain
 .                     repeat last command
 
-24. Ai Agent
+22. Ai Agent
 paru -S opencode-bin
 opencode
 /help                 show help dialog
