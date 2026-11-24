@@ -180,7 +180,7 @@ Add inside keys[]
 sudo make clean install
 reboot
 
-13. File explorer
+13.File explorer
 sudo pacman -S nnn tar zip unzip p7zip
 nnn
 j / Down / Ctrl+n     move down
@@ -716,4 +716,3 @@ opencode stats                show token usage/cost
 opencode upgrade               update OpenCode
 opencode debug config          show resolved config
 opencode --help                CLI help
-
