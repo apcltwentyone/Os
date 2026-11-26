@@ -495,7 +495,7 @@ Section "InputClass"
 EndSection
 reboot
 
-21. Vm
+22. Vm
 sudo pacman -Syu qemu-full
 sudo pacman -S qemu-img
 sudo pacman -S wget
@@ -610,7 +610,7 @@ sudo systemctl daemon-reload
 sudo systemctl start systemd-zram-setup@zram0.service
 zramctl
 
-22.Sec Tools
+23.Sec Tools
 curl -O https://blackarch.org/strap.sh
 nvim strap.sh
 sha1sum strap.sh
@@ -622,9 +622,117 @@ sudo pacman -Syu
 pacman -Sg | grep blackarch
 sudo pacman -S tool-name
 
-23.Progaming Language
+1. gdb
+sudo pacman -S gdb
+gdb ./binary
 
-23. Browser
+2. pwndbg
+git clone https://github.com/pwndbg/pwndbg ~/pwndbg && cd ~/pwndbg && ./setup.sh
+gdb ./binary
+
+3. pwntools
+pip install pwntools
+python3 exploit.py
+
+4. ropper
+pip install ropper
+ropper --file ./binary
+
+5. radare2
+sudo pacman -S radare2
+r2 ./binary
+
+6. ghidra
+paru -S ghidra-bin
+ghidra
+
+7. checksec
+paru -S checksec
+checksec --file=./binary
+
+8. afl++
+paru -S afl++
+afl-fuzz -i input_dir -o output_dir -- ./target @@
+
+9. burpsuite
+paru -S burpsuite
+burpsuite
+
+10. nmap
+sudo pacman -S nmap
+nmap <target>
+
+11. subfinder
+paru -S subfinder
+subfinder -d example.com
+
+12. httpx
+paru -S httpx
+subfinder -d example.com | httpx
+
+13. nuclei
+paru -S nuclei
+nuclei -u https://example.com
+
+14. ffuf
+paru -S ffuf
+ffuf -u https://example.com/FUZZ -w wordlist.txt
+
+15. gobuster
+paru -S gobuster
+gobuster dir -u https://example.com -w wordlist.txt
+
+16. amass
+paru -S amass
+amass enum -d example.com
+
+17. katana
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+katana -u https://example.com
+
+18. waybackurls
+go install github.com/tomnomnom/waybackurls@latest
+echo example.com | waybackurls
+
+19. anew
+go install github.com/tomnomnom/anew@latest
+cat newlist.txt | anew masterlist.txt
+
+24.Progaming Language
+
+1. C / C++
+sudo pacman -S gcc make gdb
+
+2. Python
+sudo pacman -S python python-pip
+pip install pwntools ropper
+
+3. Assembly
+sudo pacman -S nasm
+
+4. Rust
+sudo pacman -S rustup
+rustup default stable
+
+5. Go
+sudo pacman -S go
+
+6. JavaScript
+sudo pacman -S nodejs npm
+
+7. PHP
+sudo pacman -S php
+
+8. Ruby
+sudo pacman -S ruby
+
+9. Lua
+sudo pacman -S lua
+
+10. Java
+sudo pacman -S jdk-openjdk
+
+25. Browser
 #!/usr/bin/env bash
 set -e
 
@@ -693,7 +801,7 @@ gu                    go up one level in URL path
 gU                    go to root of current domain
 .                     repeat last command
 
-24. Ai Agent
+26. Ai Agent
 paru -S opencode-bin
 opencode
 /help                 show help dialog
@@ -736,3 +844,8 @@ opencode stats                show token usage/cost
 opencode upgrade               update OpenCode
 opencode debug config          show resolved config
 opencode --help                CLI help
+
+27.Music
+sudo pacman -S reaper
+reaper
+
