@@ -480,7 +480,7 @@ prefix t               show clock
 21.Numpad
 sudo pacman -S --needed xf86-input-libinput
 sudo mkdir -p /etc/X11/xorg.conf.d
-sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf > /dev/null <<'EOF'
+sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf
 Section "InputClass"
     Identifier "libinput touchpad"
     MatchIsTouchpad "on"
@@ -493,7 +493,6 @@ Section "InputClass"
     Option "ClickMethod" "clickfinger"
     Option "AccelSpeed" "0.3"
 EndSection
-EOF
 reboot
 
 22. Vm
