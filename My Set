@@ -478,9 +478,9 @@ prefix ?               list all keybindings
 prefix t               show clock
 
 21.Numpad
-sudo pacman -S xf86-input-libinput
+sudo pacman -S --needed xf86-input-libinput
 sudo mkdir -p /etc/X11/xorg.conf.d
-sudo nano /etc/X11/xorg.conf.d/30-touchpad.conf
+sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf > /dev/null <<'EOF'
 Section "InputClass"
     Identifier "libinput touchpad"
     MatchIsTouchpad "on"
@@ -490,9 +490,10 @@ Section "InputClass"
     Option "NaturalScrolling" "true"
     Option "ScrollMethod" "twofinger"
     Option "DisableWhileTyping" "true"
-    Option "ClickMethod" "buttonareas"
+    Option "ClickMethod" "clickfinger"
     Option "AccelSpeed" "0.3"
 EndSection
+EOF
 reboot
 
 22. Vm
