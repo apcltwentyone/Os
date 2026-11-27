@@ -490,7 +490,7 @@ Section "InputClass"
     Option "NaturalScrolling" "true"
     Option "ScrollMethod" "twofinger"
     Option "DisableWhileTyping" "true"
-    Option "ClickMethod" "clickfinger"
+    Option "ClickMethod" "buttonareas"
     Option "AccelSpeed" "0.3"
 EndSection
 reboot
